@@ -1,0 +1,19 @@
+.main {
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  margin: 2rem auto;
+}
+
+.btn-s {
+  display: flex;
+  background: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 180px;
+  border: solid black 1px;
+  border-radius: 5px;
+}

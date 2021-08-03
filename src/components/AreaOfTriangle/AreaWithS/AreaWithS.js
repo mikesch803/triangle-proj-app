@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./areawiths.css";
 function AreaWithS() {
   const [side1, setside1] = useState();
   const [side2, setside2] = useState();
@@ -17,13 +18,27 @@ function AreaWithS() {
   }
 
   return (
-    <div>
-      <input type="number" onChange={(e) => setside1(e.target.value)} />
-      <input type="number" onChange={(e) => setside2(e.target.value)} />
-      <input type="number" onChange={(e) => setside3(e.target.value)} />
-      <button onClick={clickHandler}>click</button>
+    <div className="main">
+      <input
+        placeholder="Enter side 1"
+        type="number"
+        onChange={(e) => setside1(e.target.value)}
+      />
+      <input
+        placeholder="Enter side 2"
+        type="number"
+        onChange={(e) => setside2(e.target.value)}
+      />
+      <input
+        placeholder="Enter side 3"
+        type="number"
+        onChange={(e) => setside3(e.target.value)}
+      />
+      <button className="btn-s" onClick={clickHandler}>
+        calculate
+      </button>
 
-      <h1>Area is : {area}</h1>
+      {area && <h1>Area is : {area}</h1>}
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.main {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.btn-hypo {
+  display: flex;
+  background: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 180px;
+  border: solid black 1px;
+  border-radius: 5px;
+}

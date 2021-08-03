@@ -1,0 +1,39 @@
+.main {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.que-ans-section {
+  text-align: justify;
+  width: 700px;
+  /* margin: 2rem; */
+
+  /* border-radius: 5px;
+ border:solid black 1px; */
+}
+
+.que-section {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.ans-section {
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.btn-opn {
+  display: flex;
+  background: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 200px;
+  border: solid black 1px;
+  border-radius: 5px;
+}

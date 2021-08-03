@@ -1,14 +1,15 @@
 import React from "react";
-
+import "./quiz.css";
+import { useState } from "react";
 function Quiz() {
-  const quiz = [
+  const question = [
     {
       id: 1,
       questionText:
         'The Pythagorean Theorem states that: "The square of the hypotenuse of a right angle triangle is equal to the sum of the squares of the other two sides." This means that, in a right triangle ABC with hypotenuse AC:',
       answerOptions: [
         { answerText: "AB * AC = BC^2", isCorrect: false },
-        { answerText: "Lo(AB + BC) (AB - BC) = AC^2ndon", isCorrect: false },
+        { answerText: "(AB + BC) (AB - BC) = AC^2", isCorrect: false },
         { answerText: "AB^2 + BC^2 = AC^2", isCorrect: true },
         { answerText: "(AB + AC)^2 = BC^2", isCorrect: false }
       ]
@@ -59,34 +60,51 @@ function Quiz() {
     }
   ];
 
+  const [score, setScore] = useState(0);
+  const [currentQue, setCurrentQue] = useState(0);
+  const [showscore, setshowscore] = useState(false);
+
   function clickHandler(isCorrect) {
-    console.log(isCorrect);
+    const nextQue = currentQue + 1;
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+    if (nextQue < question.length) {
+      setCurrentQue(nextQue);
+    } else {
+      setshowscore(true);
+    }
   }
 
   return (
-    <div>
+    <div className="main">
       <h1>Test your knowledge about triangles</h1>
-      <div>
-        {quiz.map((item) => {
-          return (
-            <div key={item.id}>
-              <h3>
-                {item.id}. {item.questionText}
-              </h3>
-              {item.answerOptions.map((x) => {
-                return (
-                  <button
-                    key={x.answerText}
-                    onClick={() => clickHandler(item.isCorrect)}
-                  >
-                    {x.answerText}
-                  </button>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
+      {showscore ? (
+        <h2>
+          Your score is {score}/{question.length}
+        </h2>
+      ) : (
+        <div className="que-ans-section">
+          <div className="que-section">
+            <span>{currentQue + 1 + ". "}</span>{" "}
+            {question[currentQue].questionText}
+          </div>
+          <div className="ans-section" key={question[currentQue].id}>
+            {question[currentQue].answerOptions.map((item) => {
+              return (
+                <button
+                  className="btn-opn"
+                  onClick={() => clickHandler(item.isCorrect)}
+                  key={item.answerText}
+                >
+                  {" "}
+                  {item.answerText}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
