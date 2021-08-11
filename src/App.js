@@ -1,7 +1,5 @@
 import "./styles.css";
-import twitter from "./images/twitter3.png";
-import git from "./images/git.png";
-import linkedin from "./images/link.png";
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import AreaOfTriangle from "./components/AreaOfTriangle/AreaOfTriangle";
 import AnglesOfTriangle from "../src/components/AnglesOfTriangle/AnglesOfTriangle";
 import Hypotenus from "../src/components/Hypotenus/Hypotenus";
@@ -10,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export default function App() {
   return (
     <div className="App">
-      <h1 className="header">Practice triangle</h1>
+      <h1 className="header">Fun with Triangle</h1>
       <main>
         <Router>
           <div>
@@ -48,33 +46,32 @@ export default function App() {
       </main>
       <footer>
         <div>
-          <h2>connect with me</h2>
+          <h1>connect with me</h1>
           <ul>
             <li>
-              <a href="https://twitter.com/mikesch_34">
-                <img
-                  alt=""
-                  src={twitter}
-                  width="50%"
-                  style={{ background: "white", borderRadius: "50%" }}
-                />
+              <a
+                href="https://twitter.com/mikesch_34"
+                className="hvr-float-shadow"
+              >
+                <FaTwitter size="2rem" />
               </a>
             </li>
 
             <li>
-              <a href="https://www.linkedin.com/in/mahendra-chauhan-b111561b1/">
-                <img
-                  src={linkedin}
-                  alt=""
-                  width="50%"
-                  style={{ background: "white", borderRadius: "50%" }}
-                />
+              <a
+                href="https://www.linkedin.com/in/mahendra-chauhan-b111561b1/"
+                className="hvr-float-shadow"
+              >
+                <FaLinkedinIn size="2rem" />
               </a>
             </li>
 
             <li>
-              <a href="https://github.com/mikesch803">
-                <img src={git} alt="" width="50%" />
+              <a
+                href="https://github.com/mikesch803"
+                className="hvr-float-shadow"
+              >
+                <FaGithub size="2rem" />
               </a>
             </li>
           </ul>
