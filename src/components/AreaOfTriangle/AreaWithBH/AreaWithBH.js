@@ -8,7 +8,9 @@ function AreaWithBH() {
 
   function clickHandler() {
     console.log(0.5 * base * height);
-    setArea(0.5 * base * height);
+    if (base && height) {
+      setArea(0.5 * base * height);
+    }
   }
 
   return (
@@ -24,7 +26,7 @@ function AreaWithBH() {
       <button className="btn-bh" onClick={clickHandler}>
         calculate
       </button>
-      {area && <h1>Area is : {area}</h1>}
+      {area && <h1 className="result">Area is : {area}</h1>}
     </div>
   );
 }

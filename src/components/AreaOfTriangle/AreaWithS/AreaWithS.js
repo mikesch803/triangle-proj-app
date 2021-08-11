@@ -14,7 +14,9 @@ function AreaWithS() {
     let s = (a + b + c) * 0.5;
     console.log(s);
     console.log(Math.sqrt(s * (s - a) * (s - b) * (s - c)));
-    setArea(Math.sqrt(s * (s - a) * (s - b) * (s - c)).toFixed(2));
+    if (s) {
+      setArea(Math.sqrt(s * (s - a) * (s - b) * (s - c)).toFixed(2));
+    }
   }
 
   return (
@@ -38,7 +40,7 @@ function AreaWithS() {
         calculate
       </button>
 
-      {area && <h1>Area is : {area}</h1>}
+      {area && <h1 className="result">Area is : {area}</h1>}
     </div>
   );
 }

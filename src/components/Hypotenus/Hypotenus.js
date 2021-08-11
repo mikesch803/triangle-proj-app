@@ -33,7 +33,7 @@ function Hypotenus() {
       <button className="btn-hypo" onClick={clickHandler}>
         calculate
       </button>
-      {result && <h1>Hypotenus is {result}</h1>}
+      {result && <h1 className="result">Hypotenus is {result}</h1>}
     </div>
   );
 }

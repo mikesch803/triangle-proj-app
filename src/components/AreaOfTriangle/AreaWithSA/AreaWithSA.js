@@ -14,7 +14,9 @@ function AreaWithSA() {
     // let s = (a+b+c)*0.5;
     // console.log(s)
     console.log((b * a * Math.sin((c * Math.PI) / 180)) / 2);
-    setArea(((b * a * Math.sin((c * Math.PI) / 180)) / 2).toFixed(2));
+    if (a && b && c) {
+      setArea(((b * a * Math.sin((c * Math.PI) / 180)) / 2).toFixed(2));
+    }
   }
 
   return (
@@ -38,7 +40,7 @@ function AreaWithSA() {
         calculate
       </button>
 
-      {area && <h1>Area is : {area}</h1>}
+      {area && <h1 className="result">Area is : {area}</h1>}
     </div>
   );
 }

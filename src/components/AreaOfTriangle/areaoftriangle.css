@@ -18,9 +18,8 @@
   border-radius: 5px;
   color: black;
   background: #e5e5e5;
-  border: black solid 0.5px;
 }
 
 .para p:hover {
-  color: #fb8500;
+  color: #e63946;
 }

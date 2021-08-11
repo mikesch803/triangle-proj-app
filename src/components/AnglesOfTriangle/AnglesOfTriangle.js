@@ -14,10 +14,12 @@ function AnglesOfTriangle() {
     let s = a + b + c;
     console.log(s === 180);
     //console.log(Math.sqrt(s*(s-a)*(s-b)*(s-c)))
-    if (s === 180) {
-      setResult("all angles makes a traiangle");
-    } else {
-      setResult("sorry, it doesn't make a triangle");
+    if (s) {
+      if (s === 180) {
+        setResult("all angles makes a traiangle");
+      } else {
+        setResult("sorry, it doesn't make a triangle");
+      }
     }
   }
   return (
@@ -45,7 +47,7 @@ function AnglesOfTriangle() {
       <button className="btn-angle" onClick={clickHandler}>
         calculate
       </button>
-      <h1>{result}</h1>
+      {result && <h1 className="result">{result}</h1>}
     </div>
   );
 }
